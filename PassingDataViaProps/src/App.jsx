@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // let healthyItems = [
+  //   "Dal",
+  //   "Fruits",
+  //   "Milk",
+  //   "Fish",
+  //   "Roti",
+  //   "Ghee",
+  //   "Salad",
+  //   "Vegetables",
+  // ];
+
+  let healthyItems = [];
+
+  // conditional rendering
+
+  // M-1 :- Using if statement (Conditional Statement).
+
+  // if (healthyItems.length === 0) {
+  //   return <p>Hey listen, I am Hungry.</p>;
+  // }
+
+  // Check Empty variable
+
+  let checkEmpty = healthyItems.length === 0 ? <h3>I am hungry</h3>: null;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Healthy Food Items:-</h1>
+
+      {/* M-2 :- Using the " TERNARY OPERATOR ". */}
+      {/* {checkEmpty} */}
+
+
+      {/* M-3 :- Using the " LOGICAL OPERATOR " .*/}
+      {checkEmpty && <h3>hey what are you doin man , I am still Hungry</h3>}
+
+      <ul className="list-group">
+        {/* Use of .map() method here to render or use as an alternate for the loop in .jsx file.*/}
+
+        {healthyItems.map((i) => (
+          <li key={i} className="list-group-item">
+            {i}
+          </li>
+        ))}
+      </ul>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
