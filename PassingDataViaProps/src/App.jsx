@@ -1,6 +1,8 @@
 import React from "react";
 import CheckEmpty from "./components/CheckEmp";
 import FoodItems from "./components/FoodItems";
+import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
 
 function App() {
   let healthyItems = [
@@ -30,17 +32,19 @@ function App() {
 
   return (
     <>
-      <h1>Healthy Food items:-</h1>
+      <Container>
+        <h1>Healthy Food items:-</h1>
 
-      {/* M-2 :- Using the " TERNARY OPERATOR ". */}
-      {/* {checkEmpty} */}
+        {/* M-2 :- Using the " TERNARY OPERATOR ". */}
+        {/* {checkEmpty} */}
 
-      {/* M-3 :- Using the " LOGICAL OPERATOR " .*/}
-      {/* {checkEmpty && <h3>hey what are you doin man , I am still Hungry</h3>} */}
+        {/* M-3 :- Using the " LOGICAL OPERATOR " .*/}
+        {/* {checkEmpty && <h3>hey what are you doin man , I am still Hungry</h3>} */}
+        <FoodInput></FoodInput>
+        <CheckEmpty sameItem={healthyItems}></CheckEmpty>
 
-      <CheckEmpty sameItem={healthyItems}></CheckEmpty>
-
-      <FoodItems sameItem={healthyItems}></FoodItems>
+        <FoodItems sameItem={healthyItems}></FoodItems>
+      </Container>
     </>
   );
 }
