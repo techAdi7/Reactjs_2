@@ -1,8 +1,8 @@
-import React from "react";
 import CheckEmpty from "./components/CheckEmp";
 import FoodItems from "./components/FoodItems";
 import Container from "./components/Container";
 import FoodInput from "./components/FoodInput";
+import React, { useState } from "react";
 
 function App() {
   let healthyItems = [
@@ -15,6 +15,33 @@ function App() {
     "Salad",
     "Vegetables",
   ];
+  
+
+
+
+
+  const [itemValue, setItemValue] = useState();
+  
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    setItemValue(event.target.value);
+  };
+
+  //[ NOTE :- THE BELOW IS NOT POSSIBLE AS IT IS POSSIBLE IN JS ONLY HERE IN REACT THE APP WILL GET REPAINT AND REASSIGN THE TEXT TO SHOW VALUE AS PREVIOUS ONE AND GOT UNCHANGES SO WE ARE GOING TO USE STATES ABOVE TO COPE UP WITH THE BELOW PROBLEM .]
+  
+  // let textToShow = "Add food item here"
+  //   const handleChange = (event)=>{
+  //     console.log(event.target.value);
+
+  //     textToShow = event.target.value;
+  //   }
+
+  // const handleBuyButtonClicked = (event , healthyItems) => {
+  //   console.log(event , "is being bought.");
+
+  //   console.log(`${healthyItems} is being bought.`);
+
+  // };
 
   // let healthyItems = [];
 
@@ -40,7 +67,9 @@ function App() {
 
         {/* M-3 :- Using the " LOGICAL OPERATOR " .*/}
         {/* {checkEmpty && <h3>hey what are you doin man , I am still Hungry</h3>} */}
-        <FoodInput></FoodInput>
+
+        <FoodInput handleOnChange={handleChange}></FoodInput>
+        <p>{itemValue}</p>
         <CheckEmpty sameItem={healthyItems}></CheckEmpty>
 
         <FoodItems sameItem={healthyItems}></FoodItems>

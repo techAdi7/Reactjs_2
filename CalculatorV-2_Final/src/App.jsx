@@ -14,9 +14,10 @@ function App() {
     // now applying the cases as per the calci requirement
 
     if (buttonClicked === "C") {
+      // clear ups the entire input box.
       setCalVal("");
     } else if (buttonClicked === "=") {
-      // evaluating the curent state value using the
+      // evaluating the current state value using the
       // eval()  method as it takes mathematical expressions as string and solve it and gives the evaluated value
 
       // [NOTE :- TO KNOW MORE ABOUT eval() METHOD REFER TO THIS LINK =>]

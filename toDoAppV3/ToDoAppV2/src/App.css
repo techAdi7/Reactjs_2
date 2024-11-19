@@ -1,0 +1,25 @@
+.toDo-container{
+  margin:50px;
+}
+
+h1{
+  font-weight: 900;
+  font-size: 45px;
+  margin: 20px;
+}
+
+input{
+  width: 100%;
+}
+
+.col-4{
+  text-align: left;
+}
+
+.asRow{
+  margin: 15px 10px;
+}
+
+.asbutton{
+  min-width: 100px;
+}

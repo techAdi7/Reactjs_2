@@ -2,12 +2,8 @@
 import styl from "./FoodItems.module.css";
 import style from "./ListItems.module.css";
 
-const ListItems = ({item}) => {
-  const handleBuyButtonClicked = (event) => {
-    console.log(event.target.value);
-    
-    console.log(`Buy ${item} Button Clicked`);
-  };
+const ListItems = ({item , handle}) => {
+  
 
   return (
     <>
@@ -16,7 +12,7 @@ const ListItems = ({item}) => {
         <button
           type="button"
           className={`${style.myButton} btn btn-info`}
-          onClick={handleBuyButtonClicked}
+          onClick={handle}
         >
           Click To Buy
         </button>
